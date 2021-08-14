@@ -1,0 +1,47 @@
+
+<div class="hold-transition login-page back" id="particles">
+<div class="login-box">
+    <div class="login-logo">
+        <a class="" href="https://corover.mobi" target="_blank"> <img
+                src="https://connect.corover.mobi/images/logo.png"></a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        <form [formGroup] ="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group has-feedback">
+                <input class="form-control" placeholder="E-Mail" formControlName="email" type="email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+                <div *ngIf="getControl['email'].invalid && (getControl['email'].dirty || getControl['email'].touched)" class="alert alert-danger">
+                    <div *ngIf="getControl['email'].errors?.required">
+                    Please enter email
+                  </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <input class="form-control" placeholder="Password" formControlName="password" type="password"
+                    value="">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <div *ngIf="getControl['password'].invalid && (getControl['password'].dirty || getControl['password'].touched)" class="alert alert-danger">
+                    <div *ngIf="getControl['password'].errors?.required">
+                    Please enter password
+                  </div>
+                </div>
+            </div>
+            <input type="checkbox" class="check" formControlName="checkbox" >
+             <span style="color:white;" class="dat">I agree to
+                <a class="" href="https://corover.mobi/CoRoverConnect-Terms-and-Conditions/" target="_blank"> Terms
+                    Conditions,</a> 
+                    <a class="" href="https://corover.mobi/CoRoverConnect-Privacy-Policy/"
+                    target="_blank">Privacy Policy</a> and 
+                    <a class="" href="https://corover.mobi/subscriber-policy/"
+                    target="_blank">Subscriber Policy </a></span>
+            <div class="row">
+                <div class="col-xs-4">
+                    <input class="btn btn-primary btn-block btn-flat" type="submit" value="Login">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
